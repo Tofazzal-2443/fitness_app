@@ -4,12 +4,13 @@ import 'package:flutter/material.dart';
 import '../models/exercises_model.dart';
 
 
-class ExercisesProvider extends ChangeNotifier{
 
+class ExercisesProvider extends ChangeNotifier{
   ExercisesModel ?exercisesModel;
   Future<ExercisesModel> getHomeData() async {
     exercisesModel = await CustomHttpRequest.fetchHomeData();
     return exercisesModel!;
   }
+
 
 }

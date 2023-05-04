@@ -1,11 +1,10 @@
-import 'package:fitness_app/custom/custom_styles.dart';
-import 'package:fitness_app/provider/exercises_provider.dart';
+
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+
 import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 
 class StartExercisesPage extends StatefulWidget {
-  StartExercisesPage({
+  const StartExercisesPage({
     Key? key,
   }) : super(key: key);
   static const String routeName = '/startExercisesPage';
@@ -23,11 +22,11 @@ class _StartExercisesPageState extends State<StartExercisesPage> {
 
     //final provider = Provider.of<ExercisesProvider>(context);
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         width: double.infinity,
         child: Stack(
           children: [
-            Container(
+            SizedBox(
               height: double.infinity,
               child: Image.network(
                 imageUrl,
@@ -59,9 +58,9 @@ class _StartExercisesPageState extends State<StartExercisesPage> {
                     innerWidget: (double value) {
                       return Center(
                         child: Text(
-                          "${second.toStringAsFixed(0)}",
-                          style: TextStyle(
-                            color: Colors.black,
+                          second.toStringAsFixed(0),
+                          style: const TextStyle(
+                            color: Colors.redAccent,
                             fontSize: 45,
                             fontWeight: FontWeight.normal,
                           ),
@@ -70,7 +69,7 @@ class _StartExercisesPageState extends State<StartExercisesPage> {
                       // use your custom widget inside the slider (gets a slider value from the callback)
                     },
                   ),
-                  ElevatedButton(onPressed: (){}, child: Text("Start", style: TextStyle(fontSize: 30),),)
+                  ElevatedButton(onPressed: (){}, child: const Text("Start", style: TextStyle(fontSize: 30),),)
                 ],
               ),
 
